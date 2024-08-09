@@ -11,18 +11,17 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Embeddable
-public class OrderItemPk implements Serializable{
+public class OrderItemPk implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Order order;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "product_id")
-	private Product prodcut;
+	private Product product;
 
-	
 	public Order getOrder() {
 		return order;
 	}
@@ -31,17 +30,17 @@ public class OrderItemPk implements Serializable{
 		this.order = order;
 	}
 
-	public Product getProdcut() {
-		return prodcut;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setProdcut(Product prodcut) {
-		this.prodcut = prodcut;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(order, prodcut);
+		return Objects.hash(order, product);
 	}
 
 	@Override
@@ -53,7 +52,7 @@ public class OrderItemPk implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		OrderItemPk other = (OrderItemPk) obj;
-		return Objects.equals(order, other.order) && Objects.equals(prodcut, other.prodcut);
+		return Objects.equals(order, other.order) && Objects.equals(product, other.product);
 	}
 
 }

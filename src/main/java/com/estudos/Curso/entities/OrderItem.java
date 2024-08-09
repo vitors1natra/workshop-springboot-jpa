@@ -26,10 +26,10 @@ public class OrderItem implements Serializable {
 		
 	}
 
-	public OrderItem(Order order, Product prodcut, Integer quantity, Double price) {
+	public OrderItem(Order order, Product product, Integer quantity, Double price) {
 		super();
 		id.setOrder(order);
-		id.setProdcut(prodcut);
+		id.setProduct(product);
 		this.quantity = quantity;
 		this.price = price;
 	}
@@ -44,11 +44,11 @@ public class OrderItem implements Serializable {
 	}
 	
 	public Product getProduct() {
-		return id.getProdcut();
+		return id.getProduct();
 	}
 	
 	public void setProduct(Product product) {
-		id.setProdcut(product);
+		id.setProduct(product);
 	}
 	
 
